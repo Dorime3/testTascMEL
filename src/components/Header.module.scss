@@ -1,0 +1,12 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    .find {
+        input {
+            margin-right: 10px;
+        }
+    }
+}

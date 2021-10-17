@@ -1,25 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import { Header, HeaderContainer } from './components/Header';
+import React from 'react';
+import { HeroesPageContainer } from './components/HeroesPage';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export class App extends React.Component {
+  componentDidMount() {
+    fetch('https://swapi.dev/api/people')
+      .then(response => response.json())
+  }
+  render() {
+    return (
+      <div className="container">
+        <HeaderContainer />
+        {/* <Paggination /> */}
+        <HeroesPageContainer />
+      </div>
+    );
+  }
 }
 
 export default App;
